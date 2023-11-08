@@ -25,7 +25,7 @@ TEST_CASE("Test sort", "[algorithms]") {
 		REQUIRE(array2[i] <= array2[i+1]);
 	}
 
-	ece3514::YourSort(array3,10, 3);
+	ece3514::YourSort(array3,10);
 	for (std::size_t i=0; i<9; i++) {
 		REQUIRE(array3[i] <= array3[i+1]);
 	}

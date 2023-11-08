@@ -7,8 +7,8 @@
 
 #include <random>
 
-#define MAX_LENGTH 4000
-#define STRIDE 32
+#define MAX_LENGTH 1000
+#define STRIDE 20
 
 int main()
 { 
@@ -23,7 +23,7 @@ int main()
     
     Stopwatch watch, watch2, watch3;
     
-    for(std::size_t n = 32; n <= MAX_LENGTH; n+=STRIDE){
+    for(std::size_t n = 10; n <= MAX_LENGTH; n+=STRIDE){
         
         watch.reset();
         watch2.reset();
@@ -39,16 +39,14 @@ int main()
             // time the sort
             watch.start();
             ece3514::SelectionSort(array1, n);
-				//ece3514::YourSort(array2, n, 128);
             watch.stop();
             
             watch2.start();
 				ece3514::BubbleSort(array2, n);
-				//ece3514::YourSort(array2, n, 64);
             watch2.stop();
 
             watch3.start();
-				ece3514::YourSort(array2, n, 8);
+				ece3514::YourSort(array2, n);
             watch3.stop();
 
         }

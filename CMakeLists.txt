@@ -10,6 +10,5 @@ add_executable(unit_tests catch.hpp unit_tests.cpp
   stopwatch.hpp stopwatch.cpp test_stopwatch.cpp
   algorithms_sort.hpp test_algorithms.cpp)
 
-add_executable(benchmark_sort benchmark_algorithms.cpp algorithms_sort.hpp
-	  	stopwatch.hpp stopwatch.cpp)
+add_executable(benchmark_find benchmark_algorithms.cpp stopwatch.hpp stopwatch.cpp)
 
