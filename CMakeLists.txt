@@ -22,3 +22,7 @@ add_executable(unit_tests catch.hpp unit_tests.cpp
 
 add_executable(benchmark_find benchmark_algorithms.cpp stopwatch.hpp stopwatch.cpp)
 
+add_executable(instructor_tests catch.hpp unit_tests.cpp
+  stopwatch.hpp stopwatch.cpp test_stopwatch.cpp
+  algorithms_sort.hpp instructor_tests.cpp)
+
