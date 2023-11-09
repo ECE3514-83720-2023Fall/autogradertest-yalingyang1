@@ -22,13 +22,6 @@ jobs:
         sudo apt update
         sudo apt install -y g++ cmake
 
-    - name: Setup Catch2
-      run: |
-        git clone https://github.com/catchorg/Catch2.git
-        cd Catch2
-        cmake -Bbuild -H. -DBUILD_TESTING=OFF
-        sudo cmake --build build/ --target install
-
     - name: Build and run tests
       run: |
         cmake -B build .
