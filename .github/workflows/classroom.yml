@@ -22,8 +22,26 @@ jobs:
         sudo apt update
         sudo apt install -y g++ cmake
 
-    - name: Build and run tests
+    - name: Build and run student tests
       run: |
         cmake -B build .
         cmake --build build
         ./build/unit_tests
+
+    - name: Check for instructor_tests.cpp
+      id: check_tests
+      run: |
+        if [ -f instructor_tests.cpp ]; then
+          echo "instructor_tests.cpp exists, running tests."
+          echo "::set-output name=INSTRUCTOR_TESTS_EXISTS::true"
+        else
+          echo "instructor_tests.cpp does not exist, skipping tests."
+          echo "::set-output name=INSTRUCTOR_TESTS_EXISTS::false"
+        fi
+      shell: bash
+
+    - name: Build and run instructor tests
+      if: steps.check_tests.outputs.INSTRUCTOR_TESTS_EXISTS == 'true'
+      run: |
+        g++ -o instructor_tests instructor_tests.cpp -I. -std=c++17 # or any other compile flags you need
+        ./instructor_tests # Run the tests
