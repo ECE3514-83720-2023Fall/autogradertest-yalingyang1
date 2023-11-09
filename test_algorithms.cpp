@@ -1,4 +1,4 @@
-#include "catch_all.hpp"
+#include "catch.hpp"
 
 #include <string>
 
