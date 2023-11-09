@@ -43,5 +43,4 @@ jobs:
     - name: Build and run instructor tests
       if: steps.check_tests.outputs.INSTRUCTOR_TESTS_EXISTS == 'true'
       run: |
-        g++ -o instructor_tests instructor_tests.cpp -I. -std=c++17 # or any other compile flags you need
-        ./instructor_tests # Run the tests
+        ./build/instructor_tests
