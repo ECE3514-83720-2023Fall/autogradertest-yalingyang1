@@ -1,0 +1,15 @@
+{
+  "tests": [
+    {
+      "name": "Student Test",
+      "setup": "",
+      "run": "unit_tests",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 2,
+      "points": 10
+    },
+    // other tests
+  ]
+}
