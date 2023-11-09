@@ -3,7 +3,7 @@
     {
       "name": "Student Test",
       "setup": "",
-      "run": "unit_tests",
+      "run": "./unit_tests",
       "input": "",
       "output": "",
       "comparison": "included",
